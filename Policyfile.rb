@@ -13,4 +13,8 @@ default_source :supermarket
 run_list 'node_cookbook::default'
 
 # Specify a custom source for a single cookbook:
+# cookbook 'nodejs', '= 5.0.0', :supermarket
+# cookbook 'apt'
+
+
 cookbook 'node_cookbook', path: '.'
