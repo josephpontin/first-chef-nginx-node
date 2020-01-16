@@ -19,3 +19,8 @@ describe service 'nginx' do
   it { should be_running }
   it { should be_enabled }
 end
+
+# checks we get a 502 when we go to localhost
+describe http('http://localhost', enable_remote_worker: true) do
+  its('status') { should cmp 502 }
+end
