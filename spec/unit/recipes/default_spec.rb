@@ -36,9 +36,9 @@ describe 'node_cookbook::default' do
       expect(chef_run).to install_nodejs_npm 'pm2'
     end
 
-    #it 'should install apt from a recipe' do
-    #  expect(chef_run).to include_recipe 'apt'
-    #end
+    it 'should install apt from a recipe' do
+      expect(chef_run).to include_recipe 'apt'
+    end
   end
 
 #  context 'When all attributes are default, on CentOS 7' do
