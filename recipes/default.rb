@@ -13,7 +13,7 @@ end
 
 # nodejs_npm 'pm2'
 
-package 'npm'
+# package 'npm'
 package 'nginx'
 
 nodejs_npm 'pm2'
@@ -28,6 +28,7 @@ end
 
 template '/etc/nginx/sites-available/proxy.conf' do
   source 'proxy.conf.erb'
+  variables proxy_port: node['nginx']['proxy_port']
   notifies :restart, 'service[nginx]'
 end
 

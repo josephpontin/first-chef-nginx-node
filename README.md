@@ -24,3 +24,7 @@ This cookbook installs nginx and starts it running. It also installs pm2 via nod
   - link
 - metadata file
 - using supermarket
+
+- Interpolation in ruby
+  - `<%  %>`
+  - to print use `<%=   %>`

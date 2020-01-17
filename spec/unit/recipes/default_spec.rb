@@ -41,7 +41,7 @@ describe 'node_cookbook::default' do
     end
 
     it 'should create a proxy.conf template in /etc/nginx/sites-available' do
-      expect(chef_run).to create_template '/etc/nginx/sites-available/proxy.conf'
+      expect(chef_run).to create_template('/etc/nginx/sites-available/proxy.conf').with_variables(proxy_port: 3000)
     end
 
     it 'should create a symlink of proxy.conf from sites-available to sites-enabled' do
@@ -55,6 +55,8 @@ describe 'node_cookbook::default' do
     it 'runs apt-get update' do
       expect(chef_run).to update_apt_update 'update sources'
     end
+
+
 
   end
 
